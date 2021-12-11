@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(255, 228, 196, 0.692);
+}
+
+.gallery {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.img__container img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    cursor: pointer;
+}
+
+.modal {
+    background-color: rgba(81, 148, 81, 0.637);
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.full__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: all 0.3s ease-in-out;
+    
+}
+
+
+.full__image.open {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal.open {
+    opacity: 1;
+    pointer-events: all;
+}
